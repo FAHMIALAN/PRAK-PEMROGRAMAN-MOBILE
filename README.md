@@ -1,4 +1,4 @@
-```
+```mermaid
 graph TD
     A[Pengguna Membuka Aplikasi] --> B[Login/Registrasi]
     B --> C{Pilih Aksi}
