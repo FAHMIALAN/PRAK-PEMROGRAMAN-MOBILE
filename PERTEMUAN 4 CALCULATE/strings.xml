@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nama aplikasi -->
+    <string name="app_name">Tip Time</string>
+
+    <!-- Judul layar untuk menghitung tip -->
+    <string name="calculate_tip">Calculate Tip</string>
+
+    <!-- Label untuk kolom input jumlah tagihan -->
+    <string name="bill_amount">Bill Amount</string>
+
+    <!-- Label untuk kolom input persentase tip -->
+    <string name="how_was_the_service">Tip Percentage</string>
+
+    <!-- Label untuk toggle pembulatan tip -->
+    <string name="round_up_tip">Round up tip?</string>
+
+    <!-- Format tampilan untuk jumlah tip yang dihitung -->
+    <string name="tip_amount">Tip Amount: %s</string>
+</resources>
