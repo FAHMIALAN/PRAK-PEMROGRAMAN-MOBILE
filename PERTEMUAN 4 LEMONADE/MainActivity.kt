@@ -32,28 +32,26 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LemonadeTheme {
-                LemonApp()
+                LemonApp() // TODO 1: Memanggil composable utama LemonApp untuk menampilkan UI aplikasi
             }
         }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class) // TODO 2: Menggunakan anotasi untuk API Material3 yang eksperimental
 @Composable
 fun LemonApp() {
-    var currentStep by remember { mutableStateOf(1) }
+    var currentStep by remember { mutableStateOf(1) } // TODO 3: Menyimpan status langkah saat ini dalam proses pembuatan lemonade
 
     Scaffold(
         topBar = {
-
-                CenterAlignedTopAppBar(
+            CenterAlignedTopAppBar(
                 title = {
-                    Text(text = stringResource(R.string.app_name))
+                    Text(text = stringResource(R.string.app_name)) // TODO 4: Menampilkan nama aplikasi di AppBar
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = Color.Gray, // Warna kuning
-                    titleContentColor = Color.Black // Warna teks hitam
-
+                    containerColor = Color.Gray, // TODO 5: Mengatur warna latar belakang AppBar menjadi abu-abu
+                    titleContentColor = Color.Black // TODO 6: Mengatur warna teks judul AppBar menjadi hitam
                 )
             )
         }
@@ -61,82 +59,82 @@ fun LemonApp() {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues), // Tambahkan padding agar tidak bertabrakan dengan AppBar
-            color = MaterialTheme.colorScheme.background
+                .padding(paddingValues), // TODO 7: Menambahkan padding agar konten tidak tertutup oleh AppBar
+            color = MaterialTheme.colorScheme.background // TODO 8: Mengatur warna latar belakang Surface sesuai tema
         ) {
-            when (currentStep) {
-                1 -> {
+            when (currentStep) { // TODO 9: Menggunakan kondisi untuk menampilkan langkah yang sesuai berdasarkan currentStep
+                1 -> { // TODO 10: Langkah 1 - Memilih lemon
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
                     ) {
-                        Text(text = stringResource(R.string.lemon_select))
-                        Spacer(modifier = Modifier.height(32.dp))
+                        Text(text = stringResource(R.string.lemon_select)) // TODO 11: Menampilkan teks instruksi untuk memilih lemon
+                        Spacer(modifier = Modifier.height(32.dp)) // TODO 12: Menambahkan spasi vertikal
                         Image(
-                            painter = painterResource(R.drawable.lemon_tree),
-                            contentDescription = stringResource(R.string.lemon_tree_content_description),
+                            painter = painterResource(R.drawable.lemon_tree), // TODO 13: Menampilkan gambar pohon lemon
+                            contentDescription = stringResource(R.string.lemon_tree_content_description), // TODO 14: Menambahkan deskripsi konten untuk aksesibilitas
                             modifier = Modifier
                                 .wrapContentSize()
                                 .clickable {
-                                    currentStep = 2
+                                    currentStep = 2 // TODO 15: Mengubah langkah saat ini menjadi 2 setelah gambar diklik
                                 }
                         )
                     }
                 }
-                2 -> {
+                2 -> { // TODO 16: Langkah 2 - Memeras lemon
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
                     ) {
-                        Text(text = stringResource(R.string.lemon_squeeze))
-                        Spacer(modifier = Modifier.height(32.dp))
+                        Text(text = stringResource(R.string.lemon_squeeze)) // TODO 17: Menampilkan teks instruksi untuk memeras lemon
+                        Spacer(modifier = Modifier.height(32.dp)) // TODO 18: Menambahkan spasi vertikal
                         Image(
-                            painter = painterResource(R.drawable.lemon_squeeze),
-                            contentDescription = stringResource(R.string.lemon_content_description),
+                            painter = painterResource(R.drawable.lemon_squeeze), // TODO 19: Menampilkan gambar proses pemerasan lemon
+                            contentDescription = stringResource(R.string.lemon_content_description), // TODO 20: Menambahkan deskripsi konten untuk aksesibilitas
                             modifier = Modifier
                                 .wrapContentSize()
                                 .clickable {
-                                    currentStep = 3
+                                    currentStep = 3 // TODO 21: Mengubah langkah saat ini menjadi 3 setelah gambar diklik
                                 }
                         )
                     }
                 }
-                3 -> {
+                3 -> { // TODO 22: Langkah 3 - Menambahkan air dan es
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
                     ) {
-                        Text(text = stringResource(R.string.lemon_drink))
-                        Spacer(modifier = Modifier.height(32.dp))
+                        Text(text = stringResource(R.string.lemon_drink)) // TODO 23: Menampilkan teks instruksi untuk menambahkan air dan es
+                        Spacer(modifier = Modifier.height(32.dp)) // TODO 24: Menambahkan spasi vertikal
                         Image(
-                            painter = painterResource(R.drawable.lemon_drink),
-                            contentDescription = stringResource(R.string.lemon_drink_content_description),
+                            painter = painterResource(R.drawable.lemon_drink), // TODO 25: Menampilkan gambar proses menambahkan air dan es
+                            contentDescription = stringResource(R.string.lemon_drink_content_description), // TODO 26: Menambahkan deskripsi konten untuk aksesibilitas
                             modifier = Modifier
                                 .wrapContentSize()
                                 .clickable {
-                                    currentStep = 4
+                                    currentStep = 4 // TODO 27: Mengubah langkah saat ini menjadi 4 setelah gambar diklik
                                 }
                         )
                     }
                 }
-                4 -> {
+                4 -> { // TODO 28: Langkah 4 - Memulai ulang proses
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
                     ) {
-                        Text(text = stringResource(R.string.lemon_restart))
-                        Spacer(modifier = Modifier.height(32.dp))
+                        Text(text = stringResource(R.string.lemon_restart)) // TODO 29: Menampilkan teks instruksi untuk memulai ulang proses
+                        Spacer(modifier = Modifier.height(32.dp)) // TODO 30: Menambahkan spasi vertikal
                         Image(
-                            painter = painterResource(R.drawable.lemon_restart),
-                            contentDescription = stringResource(R.string.lemon_restart_content_description),
+                            painter = painterResource(R.drawable.lemon_restart), // TODO 31: Menampilkan gambar tombol restart
+                            contentDescription = stringResource(R.string.lemon_restart_content_description), // TODO 32: Menambahkan deskripsi konten untuk aksesibilitas
                             modifier = Modifier
                                 .wrapContentSize()
                                 .clickable {
-                                    currentStep = 1
+                                    currentStep = 1 // TODO 33: Mengubah langkah saat ini kembali ke 1 setelah gambar diklik
                                 }
                         )
                     }
@@ -150,6 +148,6 @@ fun LemonApp() {
 @Composable
 fun DefaultPreview() {
     LemonadeTheme {
-        LemonApp()
+        LemonApp() // TODO 34: Preview composable LemonApp untuk melihat tampilan di editor
     }
 }
