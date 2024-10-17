@@ -1,0 +1,13 @@
+package com.example.grid.theme
+
+import androidx.compose.ui.graphics.Color
+
+// Warna untuk tema gelap
+val primary_dark = Color(0xFFD0BCFF)
+val secondary_dark = Color(0xFFCCC2DC)
+val tertiary_dark = Color(0xFFEFB8C8)
+
+// Warna untuk tema terang
+val primary_light = Color(0xFF6650a4)
+val secondary_light = Color(0xFF625b71)
+val tertiary_light = Color(0xFF7D5260)
